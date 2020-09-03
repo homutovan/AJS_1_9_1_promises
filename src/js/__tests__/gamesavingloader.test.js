@@ -1,19 +1,12 @@
 import GameSavingLoader from '../gamesavingloader';
-import { data } from '../reader';
+import { saveData } from '../reader';
 import GameSaving from '../gamesaving';
 
-const hitman = new GameSaving(JSON.parse(data));
+const hitman = new GameSaving(JSON.parse(saveData));
 
-test('test promise', (done) => {
-    GameSavingLoader.load().then((result) => {
-      expect(result).toEqual(hitman);
-    }).catch((err) => err);
-    done();
-  });
-
-  test('test promise', (done) => {
-    GameSavingLoader.load().then((result) => {
-      expect(result).toEqual(hitman);
-    }).catch((err) => err);
-    done();
-  });
+test('Test case №1', (done) => {
+  GameSavingLoader.load().then((result) => {
+    expect(result).toEqual(hitman);
+  }).catch((err) => err);
+  done();
+});

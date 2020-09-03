@@ -7,8 +7,8 @@ export default class GameSavingLoader {
     return new Promise(
       (resolve, reject) => read()
         .then((data) => json(data))
-        .then((data) => resolve(new GameSaving(JSON.parse(data)))
-      ).catch((err) => reject(err))
+        .then((data) => resolve(new GameSaving(JSON.parse(data))))
+        .catch((err) => reject(err)),
     );
   }
 }
